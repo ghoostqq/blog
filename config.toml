@@ -1,5 +1,6 @@
 baseURL = "https://www.gitshell.net"
 languageCode = "en-us"
-pygmentsCodeFences = true
 title = "note.qiugits"
 theme = "theer"
+pygmentsCodeFences = true
+extensions = ["noIntraEmphasis"]
