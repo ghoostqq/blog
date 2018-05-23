@@ -3,4 +3,4 @@ languageCode = "en-us"
 title = "note.qiugits"
 theme = "theer"
 pygmentsCodeFences = true
-extensions = ["noIntraEmphasis"]
+googleAnalytics = "UA-87782758-2"
