@@ -1,10 +1,6 @@
 [submodule "themes/bootswatch"]
 	path = themes/bootswatch
 	url = https://github.com/nilproductions/hugo-bootswatch.git
-[submodule "public"]
-	path = public
-	url = https://github.com/qiugits/qiugits.github.io.git
-	branch = master
 [submodule "themes/theer"]
 	path = themes/theer
 	url = https://github.com/qiugits/theer.git
