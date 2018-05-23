@@ -1,4 +1,5 @@
-baseURL = "http://example.org/"
+baseURL = "https://www.gitshell.net"
 languageCode = "en-us"
-title = "My New Hugo Site"
+pygmentsCodeFences = true
+title = "note.qiugits"
 theme = "theer"
