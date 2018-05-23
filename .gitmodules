@@ -5,3 +5,6 @@
 	path = public
 	url = https://github.com/qiugits/qiugits.github.io.git
 	branch = master
+[submodule "themes/theer"]
+	path = themes/theer
+	url = https://github.com/qiugits/theer.git
