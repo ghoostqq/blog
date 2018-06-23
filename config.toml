@@ -4,3 +4,13 @@ title = "note.qiugits"
 theme = "theer"
 pygmentsCodeFences = true
 googleAnalytics = "UA-87782758-2"
+
+[[menu.main]]
+  name = "Home"
+  weight = 1
+  url = "/"
+
+[[menu.main]]
+  name = "Blog"
+  weight = 2
+  url = "/blog"
