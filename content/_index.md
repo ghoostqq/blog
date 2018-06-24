@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "Info"
 date: 2018-05-23T19:36:24+09:00
 ---
 

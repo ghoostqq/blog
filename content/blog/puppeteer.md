@@ -1,6 +1,7 @@
 ---
 title: Puppeteer 1.0対応 ヘッドレスChrome逆引きクイックスタート
-layout: post
+date: 2018-06-24
+draft: false
 ---
 先日[Puppeteer 1.0.0][Puppeteer]がリリースされ、ちょっと話題になっていたのと、ちょうどHeadlessChromeが気になっていたので、触ってみました。
 バージョンアップによってAPIがすでに数ヶ月前のものと相違が出ており、ここで最新版に基づいて使い方をざっくりまとめてみようと思います。
