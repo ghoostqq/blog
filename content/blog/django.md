@@ -1,7 +1,7 @@
 ---
 title: "Django"
-date: 2018-05-30T20:41:47+09:00
-draft: true
+date: 2018-06-28T20:41:47+09:00
+draft: false
 ---
 
 # Django クイックリファレンス
