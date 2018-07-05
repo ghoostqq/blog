@@ -91,6 +91,12 @@ ManyToManyは.save()してから登録することに注意!
 
 [多対一](https://docs.djangoproject.com/ja/2.0/topics/db/examples/many_to_one/)
 
+#### [一対一(one-to-one)](https://docs.djangoproject.com/en/2.0/topics/db/examples/one_to_one/)
+```python
+m.OneToOneField()
+```
+参照される方はsave済みである必要がある。
+
 ### モデル操作
 #### モデルオブジェクトを作成するときの作法
 [Creating objects](https://docs.djangoproject.com/en/dev/topics/db/queries/#creating-objects)
@@ -240,3 +246,32 @@ log.addHandler(logging.StreamHandler())
 ```terminal
 $ python manage.py collectstatic
 ```
+
+# dhireクトリ構成
+
+```terminal
+$ tree
+.
+├── db.sqlite3
+├── gitshell
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-36.pyc
+│   │   ├── settings.cpython-36.pyc
+│   │   ├── urls.cpython-36.pyc
+│   │   └── wsgi.cpython-36.pyc
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── listter
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+└── manage.py
+```
+
