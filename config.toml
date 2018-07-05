@@ -1,13 +1,13 @@
 baseURL = "https://www.gitshell.net"
 languageCode = "en-us"
-title = "note.qiugits"
+title = "ghoostqq"
 theme = "theer"
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 googleAnalytics = "UA-87782758-2"
 
 [[menu.main]]
-  name = "Home"
+  name = "Info"
   weight = 1
   url = "/"
 

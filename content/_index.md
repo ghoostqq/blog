@@ -1,11 +1,11 @@
 ---
 title: "Info"
-date: 2018-05-23T19:36:24+09:00
+date: 2018-07-04T19:36:24+09:00
 ---
 
 ## About me
 Name: Qiushi Pan / 潘 秋実  
-Handle: qiugits
+Handle: ghoostqq
 
 ### Interest
 > Machine Learning, Deep Learning, Web
@@ -29,7 +29,7 @@ Handle: qiugits
 
 
 ## Links
-- [GitHub](https://github.com/qiugits)
-- [Twitter](https://twitter.com/qiugits)
-- [Qiita](https://qiita.com/qiugits)
+- [GitHub](https://github.com/ghoostqq)
+- [Twitter](https://twitter.com/ghoostqq)
+- [Qiita](https://qiita.com/ghoostqq)
 
