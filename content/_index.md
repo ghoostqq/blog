@@ -1,6 +1,9 @@
 ---
 title: "Info"
 date: 2018-07-04T19:36:24+09:00
+type: "top"
+menu: "main"
+weight: 1
 ---
 
 ## About me

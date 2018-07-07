@@ -1,4 +1,7 @@
 ---
 title: "Blog"
-date: 2018-05-23T21:18:14+09:00
+menu: "main"
+weight: 2
 ---
+
+<!--more-->

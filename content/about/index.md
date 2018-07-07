@@ -1,6 +1,8 @@
 ---
 title: "About"
 date: 2018-05-23T19:45:08+09:00
+menu: "About"
+type: "top"
 ---
 
 ## About me
