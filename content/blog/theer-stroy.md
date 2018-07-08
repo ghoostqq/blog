@@ -1,7 +1,11 @@
 ---
 title: "Hugoのテーマ「Theer」を作成しました"
 date: 2018-07-05T21:55:18+09:00
-draft: false
+keywords:
+- Hugo
+- Hugo Theme
+- Theme
+- Go
 ---
 
 GitHubで使われているPrimerのスタイルに基づいて、Hugoのテーマ「Theer」を作成しました。

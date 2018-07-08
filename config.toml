@@ -1,7 +1,13 @@
 baseURL = "https://www.gitshell.net"
-languageCode = "en-us"
+languageCode = "ja"
 title = "ghoostqq"
 theme = "theer"
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 googleAnalytics = "UA-87782758-2"
+
+[params]
+description = "ghoostqq's web site. Find my information, my blog on technologies and personal hobbies here."
+twitter = "ghoostqq"
+useIcon = true
+useTwitterCard = true
