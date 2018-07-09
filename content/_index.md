@@ -21,6 +21,7 @@ Handle: ghoostqq
 ### [VainLab (2017~)](https://vainlab.gitshell.net)
 > Enable Vainglory players to browse their game history online. Further updates are being planned. I built this web site from the server to its front end.
 
+**Find my other projects in [Projects tab]({{< ref "projects.md" >}})**
 
 ## Activities
 ### Internship
