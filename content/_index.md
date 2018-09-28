@@ -8,7 +8,6 @@ weight: 1
 
 ## About me
 Name: Qiushi Pan / 潘 秋実  
-Handle: ghoostqq
 
 ### Interest
 > Machine Learning, Deep Learning, Web
@@ -33,7 +32,7 @@ Handle: ghoostqq
 
 
 ## Links
-- [GitHub](https://github.com/ghoostqq)
-- [Twitter](https://twitter.com/ghoostqq)
-- [Qiita](https://qiita.com/ghoostqq)
-
+- hanpannet
+@ [GitHub](https://github.com/hanpannet)
+| [Twitter](https://twitter.com/hanpannet)
+| [Qiita](https://qiita.com/hanpannet)
