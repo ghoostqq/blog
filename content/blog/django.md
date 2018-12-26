@@ -2,10 +2,13 @@
 title: "Django"
 date: 2018-06-28T20:41:47+09:00
 draft: false
+tags: ["django"]
+categories: ["django"]
+series: []
 ---
 
 Djangoの重要コマンド、設計パターンのまとめ。
-<!--more-->
+
 
 # Django クイックリファレンス
 
@@ -60,15 +63,25 @@ $ python manage.py shell
 ### モデル設定・設計
 ```
 ForeignField
-on_delete
 m.CASCADE
 ```
-[Django、`on_delete`を使う(django2.0から必須)](https://torina.top/detail/297/)
+
 [Relationships](https://docs.djangoproject.com/en/2.0/topics/db/models/#relationships)
 [Related object reference](https://docs.djangoproject.com/en/2.0/ref/models/relations/)
 [Django: モデルフィールドリファレンスの一覧](https://qiita.com/nachashin/items/f768f0d437e0042dd4b3) <- 不完全
 [モデルフィールドリファレンス](https://docs.djangoproject.com/ja/2.0/ref/models/fields/)
 
+##### `on_delete`
+[Django、`on_delete`を使う(django2.0から必須)](https://torina.top/detail/297/)
+
+```
+models.CASCADE
+models.PROTECT
+models.SET_NULL
+models.SET_DEFAULT
+models.SET()
+models.DO_NOTHING
+```
 
 ##### `AutoField`
 idに使われる。数字で、自動で1ずつ増える（？）。（参照：https://stackoverflow.com/a/6062240/8776028)
@@ -84,10 +97,27 @@ class FooModel(m.Model):
 ```
 このようにidを書き換えればいい。
 
+### Relationship
+- [2.1/ref/models/relations/](https://docs.djangoproject.com/en/2.1/ref/models/relations/)
+- [2.1/topics/db/examples/](https://docs.djangoproject.com/en/2.1/topics/db/examples/)
+
 #### [多対多関係(Many-to-many)](https://docs.djangoproject.com/ja/2.0/topics/db/examples/many_to_many/)
 m.ManyToManyField(RelatedModel)
 
 ManyToManyは.save()してから登録することに注意!
+
+ManyToMany.throughを明示指定すれば任意のモデルをManyToManyのRelationとして使用できる（？）
+
+through Modelの要素で`order_by`するベストプラクティス何だろう
+QuerySetの使い方？
+Metaで記述する例 [#](https://stackoverflow.com/questions/3893955/django-manytomanyfield-ordering-using-through)
+
+```python
+class ProfileAccount(models.Model):
+	pass
+	class Meta:
+		ordering = ('number',)
+```
 
 [多対一](https://docs.djangoproject.com/ja/2.0/topics/db/examples/many_to_one/)
 
@@ -96,6 +126,11 @@ ManyToManyは.save()してから登録することに注意!
 m.OneToOneField()
 ```
 参照される方はsave済みである必要がある。
+
+#### その他Model.pyを書くときのTips
+##### 定義前のモデルを参照
+クラス名を文字列で書けば良い
+
 
 ### モデル操作
 #### モデルオブジェクトを作成するときの作法
@@ -130,6 +165,9 @@ getよりfilter().exists()がいいらしい。
 [Using Django querysets effectively](http://blog.etianen.com/blog/2013/06/08/django-querysets/)
 all()やiterator()についても記述がある。
 
+#### ループの前にRelatedをあらかじめ取ってくる
+[`select_related()`, `prefetch_related("creative_set"):`](https://qiita.com/shunsukeaihara/items/eaaace97f6db75355f95)
+
 ### 統計分析
 #### Aggregation
 [](https://docs.djangoproject.com/ja/2.0/topics/db/aggregation/)
@@ -154,6 +192,26 @@ urlpatterns = [
     path('', views.index, name='index'),
 ]
 ```
+
+
+
+##### Method view ?で部分的にアップデートする方法
+
+https://stackoverflow.com/a/4674127/8776028
+
+```python
+def my_view(request, id): 
+    instance = get_object_or_404(MyModel, id=id)
+    form = MyForm(request.POST or None, instance=instance)
+    if form.is_valid():
+        form.save()
+        return redirect('next_view')
+    return render(request, 'my_template.html', {'form': form}) 
+```
+
+
+
+
 
 #### Class View
 

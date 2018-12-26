@@ -2,6 +2,12 @@
 title: "Chainer meetup 3"
 date: 2018-06-09T13:46:07+09:00
 draft: true
+tags: 
+- Chainer
+- Chainer Meetup
+categories: 
+- Chainer
+series: []
 ---
 
 # 1st Presentation.

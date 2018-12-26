@@ -2,6 +2,13 @@
 title: 論文 QANet(2018) を読む
 date: 2018-05-23T21:14:09+09:00
 draft: true
+tags: 
+- CNN
+- Attention
+- a long long long long tag
+categories: 
+- 論文読み
+series: []
 ---
 
 https://github.com/arXivTimes/arXivTimes/issues/731  

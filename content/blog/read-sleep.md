@@ -2,9 +2,16 @@
 title: "Read Sleep.c"
 date: 2018-07-10T14:15:56+09:00
 draft: true
+tags: 
+- GNU
+- C
+- C lang
+categories: 
+- GNU
+series: []
 ---
 
-<!--more-->
+
 
 `~FILE *~`
 A) fopen / fclose / fread / fwrite / fputs / fgets ...

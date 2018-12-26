@@ -3,9 +3,14 @@ title: "Raspberry Pi"
 date: 2018-07-10T02:18:51+09:00
 draft: true
 description: "ラズベリーパイ(Raspberry Pi)、通称ラズパイを始めるにあたってのまとめ"
+tags: 
+- Raspberry Pi
+categories: 
+- Raspberry Pi
+series: []
 ---
 
-<!--more-->
+
 
 前提
 - ラズパイ

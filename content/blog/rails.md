@@ -2,6 +2,13 @@
 title: "Rails"
 date: 2018-06-04T12:38:36+09:00
 draft: true
+tags: 
+- Rails
+- Ruby on Rails
+- まとめ
+categories: 
+- Rails
+series: []
 ---
 
 # Model

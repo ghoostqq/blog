@@ -2,11 +2,17 @@
 title: Puppeteer 1.0対応 ヘッドレスChrome逆引きクイックスタート
 date: 2018-06-24
 draft: false
+tags: 
+- Puppeteer
+- Headless Chrome
+- Node.js
+categories:
+- Node.js
+series: []
 ---
 先日[Puppeteer 1.0.0][Puppeteer]がリリースされ、ちょっと話題になっていたのと、ちょうどHeadlessChromeが気になっていたので、触ってみました。
 バージョンアップによってAPIがすでに数ヶ月前のものと相違が出ており、ここで最新版に基づいて使い方をざっくりまとめてみようと思います。
 使い始める際に概要を掴むためのクイックスタートに役立てば幸いです。
-<!--more-->
 
 ## レファレンス
 [puppeteer API][puppeteer API]
@@ -110,7 +116,6 @@ await page.screenshot({path: './screenshot.png', fullPage: true});
 ```
 スクリーンショットを保存します。
 できるだけ絶対パスを投げてあげると良いでしょう。
-
 
 ---
 自分が使っていくに従ってアップデートはするつもりですが、含めて欲しい・含んだ方がいいよというもの、あればコメントください。  

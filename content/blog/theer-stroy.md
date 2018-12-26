@@ -6,16 +6,21 @@ keywords:
 - Hugo Theme
 - Theme
 - Go
+tags:
+- Hugo
+- Hugo Theme
+categories: ["django"]
+series: []
 ---
 
 GitHubで使われているPrimerのスタイルに基づいて、Hugoのテーマ「Theer」を作成しました。
 GitHubのReadmeのようにシンプルで読みやすく、さらにブログ的な要素としてヘッダとTOC（目次）が表示できます。
 Hugoの使い方とともに紹介します。
-<!--more-->
+
 
 ## ソースコード
 こちらで公開しています：
-https://github.com/ghoostqq/theer
+https://github.com/qqhann/theer
 
 このブログもTheerが使われています。
 
@@ -46,7 +51,7 @@ hugo new site myWebSite
 ```terminal
 cd myWebSite
 git init
-git submodule add https://github.com/ghoostqq/theer.git themes/theer
+git submodule add https://github.com/qqhann/theer.git themes/theer
 
 echo 'theme = "theer"' >> config.toml
 ```

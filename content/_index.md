@@ -10,29 +10,40 @@ weight: 1
 Name: Qiushi Pan / 潘 秋実  
 
 ### Interest
-> Machine Learning, Deep Learning, Web
+Machine Learning, Deep Learning, Web
 
 ### Hobby
-> Anime, Manga, Movie
+Anime, Manga, Movie
+
+### Links
+
+qqhann
+@ [GitHub](https://github.com/qqhann)
+| [Twitter](https://twitter.com/qqhann)
+| [Qiita](https://qiita.com/qqhann)
 
 
-## Projects
+
+
+## Major Projects
 ### [VainLab (2017~)](https://vainlab.gitshell.net)
 > Enable Vainglory players to browse their game history online. Further updates are being planned. I built this web site from the server to its front end.
 
 **Find my other projects in [Projects tab]({{< ref "projects.md" >}})**
 
 ## Activities
-### Internship
-- Cookpad 2018 Spring - Infrustructure Course (1day)
-- VoyageGroup 2018 Spring - Go Web Application (1day)
-
 ### Prize
+
 - Shinsei Financial Hackathon 2018 - First Place
 
+### Job
 
-## Links
-- hanpannet
-@ [GitHub](https://github.com/hanpannet)
-| [Twitter](https://twitter.com/hanpannet)
-| [Qiita](https://qiita.com/hanpannet)
+- SuperEvilMegacorp 2016-2017 - Community Manager
+- Keywords Studio 2017-PRESENT - English-Japanese Translator
+- Has-key 2018-PRESENT - Engineer
+- Telhi 2018-PRESENT - Engineer
+
+### Internship
+
+- Cookpad 2018 Spring - Infrustructure Course (1day)
+- VoyageGroup 2018 Spring - Go Web Application (1day)

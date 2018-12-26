@@ -2,6 +2,12 @@
 title: "Pandas"
 date: 2018-06-03T01:49:26+09:00
 draft: true
+tags: 
+- Python
+- pandas
+categories: 
+- Python
+series: []
 ---
 
 ```python
