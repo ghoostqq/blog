@@ -252,7 +252,7 @@ $PROMPT = "{INTENSE_BLACK}[ {INTENSE_WHITE}{git_toplevel}{INTENSE_BLACK}{git_pre
 
 このコードをxonshrcにコピーして快適なプロンプトを始めましょう♪
 
-
+![xonsh-prompt](/images/xonsh-advent2018.png)
 
 ---
 
