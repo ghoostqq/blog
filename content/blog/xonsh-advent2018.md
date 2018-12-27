@@ -258,6 +258,7 @@ $PROMPT = "{INTENSE_BLACK}[ {INTENSE_WHITE}{git_toplevel}{INTENSE_BLACK}{git_pre
 
 初めてアドベントカレンダーなるものを書きました．いかがだったでしょうか．どうぞ気軽にコメントください．
 
-Twitterもやっているのでフォロー頂けると嬉しいです．
+[Twitterもやっている](https://twitter.com/qqhann)のでフォロー頂けると嬉しいです．
 
 それでは，クリスマス過ぎちゃったけど，みなさん良いお年を．
+
