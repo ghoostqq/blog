@@ -1,13 +1,21 @@
-baseURL = "https://www.gitshell.net"
+baseURL = "https://qqhann.info"
 languageCode = "ja"
-title = "ghoostqq"
-theme = "theer"
+title = "qqhann"
+theme = "hugo-primer"
+hasCJKLanguage = true
+summaryLength = 70
 pygmentsCodeFences = true
 pygmentsUseClasses = true
-googleAnalytics = "UA-87782758-2"
+googleAnalytics = "UA-87782758-5"
+disqusShortname="qqhann"
+
+[frontmatter]
+lastmod = ["lastmod", ":fileModTime", ":default"]
 
 [params]
-description = "ghoostqq's web site. Find my information, my blog on technologies and personal hobbies here."
-twitter = "ghoostqq"
+description = "Qiushi(a.k.a. qqhann)'s web site. Find my information, my blog on technologies and personal hobbies here."
+twitter = "qqhann"
 useIcon = true
 useTwitterCard = true
+shareTo = ["Twitter", "Hatena", "Facebook"]
+creditHugoPrimer = true
