@@ -9,9 +9,6 @@ pygmentsUseClasses = true
 googleAnalytics = "UA-87782758-5"
 disqusShortname="qqhann"
 
-[frontmatter]
-lastmod = ["lastmod", ":fileModTime", ":default"]
-
 [params]
 description = "Qiushi(a.k.a. qqhann)'s web site. Find my information, my blog on technologies and personal hobbies here."
 twitter = "qqhann"
