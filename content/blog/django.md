@@ -222,6 +222,12 @@ CreateView, DeleteView, EditView, FormView
 [クラスベースのビューでフォームを扱う](https://docs.djangoproject.com/ja/2.0/topics/class-based-views/generic-editing/)
 
 
+
+`extra_context`は簡易に定義できるものの，urlパラメータを利用したオブジェクトを渡そうとするとselfが必要になる．そこで次のリンクを利用する．
+
+https://docs.djangoproject.com/en/2.1/topics/class-based-views/generic-display/#adding-extra-context
+
+
 ## Template
 
 ### HTML
