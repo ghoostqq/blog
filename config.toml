@@ -16,4 +16,4 @@ twitter = "qqhann"
 useIcon = true
 useTwitterCard = true
 shareTo = ["Twitter", "Hatena", "Facebook"]
-creditHugoPrimer = true
+showFooterCredits = true
