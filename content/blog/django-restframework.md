@@ -41,6 +41,16 @@ from rest_framework.response import Response
 
 
 
+## [Generic Views](https://www.django-rest-framework.org/api-guide/generic-views)
+
+基本は`queryset`, `serializer_class`を指定する．
+
+`get_queryset(self)`で，List Viewsで返すものを詳しく設定する．
+
+`get_object(self)`で，Detail Viewsで返すものを詳しく設定する．
+
+
+
 ## get_object_or_404 for DRF?
 
 https://stackoverflow.com/a/42036696/8776028
