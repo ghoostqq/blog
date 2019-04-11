@@ -1,9 +1,9 @@
 [submodule "themes/bootswatch"]
 	path = themes/bootswatch
 	url = https://github.com/nilproductions/hugo-bootswatch.git
-[submodule "themes/theer"]
-	path = themes/theer
-	url = https://github.com/qqhann/theer.git
+[submodule "themes/hugo-primer"]
+	path = themes/hugo-primer
+	url = https://github.com/qqhann/hugo-primer.git
 [submodule "public"]
 	path = public
 	url = https://github.com/qqhann/qqhann.github.io.git
