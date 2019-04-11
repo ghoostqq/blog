@@ -3,7 +3,7 @@
 	url = https://github.com/nilproductions/hugo-bootswatch.git
 [submodule "themes/theer"]
 	path = themes/theer
-	url = https://github.com/ghoostqq/theer.git
+	url = https://github.com/qqhann/theer.git
 [submodule "public"]
 	path = public
-	url = https://github.com/ghoostqq/qiugits.github.io.git
+	url = https://github.com/qqhann/qqhann.github.io.git
