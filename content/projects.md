@@ -21,7 +21,7 @@ showDate: true
 
 > 学類主専攻授業のグループワークにて制作した冷蔵庫の中身管理アプリ。投票にて最優秀賞
 
-### [VainLab (2017)](https://vainlab.gitshell.net)
+### [VainLab (2017)](https://gitshell.net/vainlab)
 
 > Enable Vainglory players to browse their game history online.
 

@@ -33,7 +33,7 @@ Anime, Manga, Movie
 
 > 筑波大学アスレチックデパートメントの広報用Webサイト。筑波大学の学生により制作。記事も学生の手により更新され、部活動を大学スポーツへと昇華させる情報発信を担う
 
-### [VainLab (2017)](https://vainlab.gitshell.net)
+### [VainLab (2017)](https://gitshell.net/vainlab)
 
 > Enable Vainglory players to browse their game history online. Further updates are being planned. I built this web site from the server to its front end.
 
