@@ -1,4 +1,4 @@
-baseURL = "https://qqhann.info"
+baseURL = "https://qqhann.dev"
 languageCode = "ja"
 title = "qqhann"
 theme = "hugo-primer"
@@ -8,7 +8,7 @@ pygmentsCodeFences = true
 pygmentsUseClasses = true
 googleAnalytics = "UA-87782758-5"
 disqusShortname="qqhann"
-copyright = "&copy;Qiushi Pan 2018"
+copyright = "&copy;Qiushi Pan 2018-2019"
 
 [params]
 description = "Qiushi(a.k.a. qqhann)'s web site. Find my information, my blog on technologies and personal hobbies here."
