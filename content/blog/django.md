@@ -108,9 +108,36 @@ ManyToManyは.save()してから登録することに注意!
 
 ManyToMany.throughを明示指定すれば任意のモデルをManyToManyのRelationとして使用できる（？）
 
+##### [Extra fields on many-to-many relationships](https://docs.djangoproject.com/en/2.2/topics/db/models/#extra-fields-on-many-to-many-relationships)
+
+```python
+from django.db import models
+
+class Person(models.Model):
+    name = models.CharField(max_length=128)
+
+    def __str__(self):
+        return self.name
+
+class Group(models.Model):
+    name = models.CharField(max_length=128)
+    members = models.ManyToManyField(Person, through='Membership')
+
+    def __str__(self):
+        return self.name
+
+class Membership(models.Model):
+    person = models.ForeignKey(Person, on_delete=models.CASCADE)
+    group = models.ForeignKey(Group, on_delete=models.CASCADE)
+    date_joined = models.DateField()
+    invite_reason = models.CharField(max_length=64)
+```
+
+
+
 through Modelの要素で`order_by`するベストプラクティス何だろう
 QuerySetの使い方？
-Metaで記述する例 [#](https://stackoverflow.com/questions/3893955/django-manytomanyfield-ordering-using-through)
+ [Metaで記述する例](https://stackoverflow.com/questions/3893955/django-manytomanyfield-ordering-using-through)
 
 ```python
 class ProfileAccount(models.Model):
