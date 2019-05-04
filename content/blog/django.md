@@ -146,7 +146,24 @@ class ProfileAccount(models.Model):
 		ordering = ('number',)
 ```
 
-[多対一](https://docs.djangoproject.com/ja/2.0/topics/db/examples/many_to_one/)
+
+
+[複数属性の組でPrimary Keyとする](https://docs.djangoproject.com/en/2.2/ref/models/options/#unique-together)
+
+現状の方法では`unique_together`を用いる。これは将来depricatedとなる可能性があるため、他の方法があれば随時更新する。
+
+```python
+class Hop(models.Model):
+    migration = models.ForeignKey('Migration')
+    host = models.ForeignKey(User, related_name='host_set')
+
+    class Meta:
+        unique_together = (("migration", "host"),)
+```
+
+
+
+多対一](https://docs.djangoproject.com/ja/2.0/topics/db/examples/many_to_one/)
 
 #### [一対一(one-to-one)](https://docs.djangoproject.com/en/2.0/topics/db/examples/one_to_one/)
 ```python
