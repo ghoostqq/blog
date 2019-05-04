@@ -97,6 +97,19 @@ class FooModel(m.Model):
 ```
 このようにidを書き換えればいい。
 
+#### Overwrite save()
+
+```python
+def save(self, *args, **kwargs):
+        # Before save
+        # ...
+        super(MyModel, self).save(*args, **kwargs)
+        # After save
+        # ...
+```
+
+
+
 ### Relationship
 - [2.1/ref/models/relations/](https://docs.djangoproject.com/en/2.1/ref/models/relations/)
 - [2.1/topics/db/examples/](https://docs.djangoproject.com/en/2.1/topics/db/examples/)
