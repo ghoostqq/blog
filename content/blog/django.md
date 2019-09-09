@@ -204,7 +204,18 @@ Player.objects.get(id=1)
 Player.objects.filter(shard='ea')
 ```
 
+#### 一括作成 Bulk Create
+
+Django https://docs.djangoproject.com/en/2.1/ref/models/querysets/#bulk-create
+
+DRF https://www.django-rest-framework.org/api-guide/serializers/#dealing-with-multiple-objects
+
+DRF ListSerializer https://www.django-rest-framework.org/api-guide/serializers/#listserializer
+
+http://note.crohaco.net/2018/django-rest-framework-serializer/
+
 #### クエリ
+
 .filter()の中で使う、多分。
 
 lte (less than or equal)など
