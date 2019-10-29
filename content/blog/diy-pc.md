@@ -11,11 +11,9 @@ keywords:
 - 自作PC
 - GPU
 - NVIDIA
-footnotes: true
 ---
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">沼に両足ドボン！ <a href="https://t.co/FtJ5oFmT0G">pic.twitter.com/FtJ5oFmT0G</a></p>&mdash; qqhann🦊 (@qqhann) <a href="https://twitter.com/qqhann/status/1185025110983315456?ref_src=twsrc%5Etfw">October 18, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 朝の11時くらいに部品が届き、夜の2時まで作業を続けていました。
 
 知らないことを調べながらということもあるのですが、GPU設定がわからず6時間くらい溶かしたというのが大きいです。
