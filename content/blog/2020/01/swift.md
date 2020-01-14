@@ -33,6 +33,11 @@ let taylorRocks: Bool = true
 
 #### Array
 
+```swift
+let beatles = ["John", "Paul", "George", "Ringo"]
+beatles[1]
+```
+
 #### Sets
 
 ```swift
@@ -56,13 +61,13 @@ favoriteIceCream["Charlotte", default: "Unknown"]
 
 #### Tuple
 
+Tupleはどうやらそもそも型ではなさそう．collectionでもない．
+
 ```swift
 var name = (first: "Taylor", last: "Swift")
 ```
 tupleの使い方。あたいは変更できるが、型は変更できない。
 `name.0`または`name.first`のように、ポジションまたは名前でアクセスできる。
-
-Tupleはどうやらそもそも型ではなさそう．
 
 ### collections init and type annotation
 
@@ -110,8 +115,6 @@ let talking = Activity.talking(topic: "football")
 
 この付加情報は定義されている場合，初期化時に具体値を与えなければならない．
 
-
-
 #### enumのIndex指定
 
 ```swift
@@ -136,3 +139,4 @@ enum Planet: Int {
 }
 ```
 このように個別に指定することができる。その後は自動でインクリメンタルするので、earthは3が割り振られる。
+
