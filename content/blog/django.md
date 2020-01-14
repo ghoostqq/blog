@@ -1,16 +1,12 @@
 ---
-title: "Django"
+title: "Djangoクイックレファレンス"
 date: 2018-06-28T20:41:47+09:00
 draft: false
 tags: ["django"]
 categories: ["django"]
 series: []
+math: false
 ---
-
-Djangoの重要コマンド、設計パターンのまとめ。
-
-
-# Django クイックリファレンス
 
 ## コマンドライン操作
 #### バージョン確認
