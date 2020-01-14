@@ -140,3 +140,101 @@ enum Planet: Int {
 ```
 このように個別に指定することができる。その後は自動でインクリメンタルするので、earthは3が割り振られる。
 
+## Day3
+
+```swift
+12 + 4
+12 - 4
+12 * 4
+12 / 4
+12 / 5  // 2
+12.0 / 5  // 2.4
+12 / 5.0  // 2.4
+12 % 5
+
+"Hello " + "World"
+["John", "Paul"] + ["George", "Ringo"]  // ["John", "Paul", "George", "Ringo"]
+
+// compound assignment operators
+var count = 0
+count += 1
+
+// comparison operators
+6 == 4
+6 != 4
+6 < 4
+6 >= 4
+"abc" < "bbc"  // true
+```
+
+#### conditions
+
+```swift
+var sex = "man"
+if sex == "man" {
+    print("Hello, Mr.")
+} else if sex == "woman" {
+    print("Hello, Ms.")
+} else {
+    print("Hello, sir")
+}
+
+var age = 19
+if age >= 18 && age < 20 {
+    print("You can drive but not drink")
+}
+// And
+true && false
+// Or
+true || false
+```
+
+##### 三項演算子
+
+```swift
+// the tenary operator
+var sex2 = "woman"
+print("Hello " + (sex2 == "man" ? "boy" : "girl"))
+```
+
+### switch文
+
+```swift
+// switch statements
+let weather = "sunny"
+switch weather {
+case "rain":
+    print("Bring an umbrella")
+case "sunny":
+    print("Wear sunglass")
+    fallthrough
+case "snow":
+    print("Wrap up warn")
+default:
+    print("Enjoy your day!")
+}
+// "Wear sunglass\n"
+// "Wrap up warn\n"
+// ↑snowの中身がfallthroughにより実行された．
+```
+
+fallthroughは次のcaseまたはdefaultを実行するみたい．使い道限られそう．
+
+
+```swift
+// range operators
+let score = 84
+switch score {
+case ..<0:
+    print("Error")
+case 0..<50:
+    print("Failed")
+case 50...84:
+    print("Pass")
+default:
+    print("Great!")
+}
+```
+
+range operatorは`a..<b`：aからbまででbを含まない；`a...b`：bを含む；の2種類．
+
