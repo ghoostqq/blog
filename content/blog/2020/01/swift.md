@@ -1,5 +1,5 @@
 ---
-title: "Swift Quick start"
+title: "Swift Cheat sheet (1-12/100)"
 date: 2020-01-14T23:18:11+09:00
 draft: false
 categories:
@@ -9,7 +9,7 @@ tags:
 keywords:
 ---
 
-[100DaysOfSwiftUI](https://www.hackingwithswift.com/100/swiftui)の振り返り用Cheat sheetです．
+[100DaysOfSwiftUI](https://www.hackingwithswift.com/100/swiftui)の振り返り用Cheat sheetです．Day1-Day12のまとめです．
 
 ## Day1
 
@@ -309,5 +309,96 @@ for i in 1...10 {
     }
     print(i)
 }
+```
+
+## Day5
+
+### funcitons
+
+```swift
+func printHW(name: String) {
+    print("Hello world!")
+    print("Welcome \(name)")
+}
+printHW(name: "Qiushi")
+
+
+func square(number: Int) -> Int {
+    return number * number
+}
+print(square(number: 8))
+
+```
+
+### parameter labels
+
+```swift
+func sayHello(to name: String) {
+    print("Hello \(name)")
+}
+sayHello(to: "Qiushi")
+```
+
+### omitting parameter labels
+
+```swift
+func greet(_ name: String) {
+    print("Hello \(name)")
+}
+greet("Qiushi")
+
+func greetTwo(_ name1: String, _ name2: String = "John Doe") {
+    print("Hello \(name1) and \(name2)")
+}
+greetTwo("Qiushi", "Peco")
+greetTwo("Qiushi")
+```
+
+### variadic funcitons
+
+```swift
+func squareMany(numbers: Int...) {
+    for number in numbers {
+        print("\(number) squared is \(number * number)")
+    }
+}
+squareMany(numbers: 1, 2, 3)
+```
+
+### throwing functions
+
+```swift
+enum PasswordError: Error {
+    case obvious
+}
+func checkPassword(_ password: String) throws -> Bool {
+    if password != "password" {
+        throw PasswordError.obvious
+    }
+    return true
+}
+```
+
+#### running throwing functions -> do, try, catch
+
+```swift
+do {
+    try checkPassword("wrong pass")
+    print("Correct password!")
+} catch {
+    print("Wrong password!")
+}
+
+```
+
+### inout parameters
+
+```swift
+func doubleInPlace(number: inout Int) {
+    number *= 2
+}
+var myNum = 10
+doubleInPlace(number: &myNum)
+print(myNum)
 ```
 
