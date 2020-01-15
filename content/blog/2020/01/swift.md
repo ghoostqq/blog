@@ -238,3 +238,76 @@ default:
 
 range operatorは`a..<b`：aからbまででbを含まない；`a...b`：bを含む；の2種類．
 
+## Day4
+
+### for loop
+
+```swift
+for i in 1...10 {
+    print(i)
+}
+
+for album in ["Red", "1989", "Reputation"] {
+    print("\(album) is on Apple Music")
+}
+
+for _ in 1..<4 {
+    print("Yes")
+}
+```
+
+参照が必要なければ`_`を指定することで，Swiftは評価をスキップしてくれる？
+
+### while loop
+
+```swift
+var number = 1
+while number < 100 {
+    if number == 40 {
+        print("I cannot wait. I'm coming!")
+        break
+    }
+    print(number)
+    number += 1
+}
+print("Here I come!")
+```
+
+### repeat loop
+
+```swift
+repeat {
+    print(number)
+    number += 1
+} while number < 40
+```
+
+### name loop to exit
+
+```swift
+outerLoop: for i in 1...10 {
+    innerLoop: for j in 1...10 {
+        if i*j % 3 == 0 {
+            break innerLoop
+        }
+        
+        print("\(i*j)")
+        
+        if i*j == 20 {
+            break outerLoop
+        }
+    }
+}
+```
+
+### continue
+
+```swift
+for i in 1...10 {
+    if i % 2 == 0 {
+        continue
+    }
+    print(i)
+}
+```
+
