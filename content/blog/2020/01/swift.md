@@ -322,12 +322,10 @@ func printHW(name: String) {
 }
 printHW(name: "Qiushi")
 
-
 func square(number: Int) -> Int {
     return number * number
 }
 print(square(number: 8))
-
 ```
 
 ### parameter labels
@@ -339,7 +337,9 @@ func sayHello(to name: String) {
 sayHello(to: "Qiushi")
 ```
 
-### omitting parameter labels
+パラメーターラベルは複数定義できる．可読性のためにここまでするのはたまげる．
+
+### omitting parameter labels; default parameters
 
 ```swift
 func greet(_ name: String) {
@@ -379,6 +379,10 @@ func checkPassword(_ password: String) throws -> Bool {
 }
 ```
 
+Errorを継承？するエラーenumを定義する必要あり．
+
+エラーをthrowしうるfuncはthrowsで示す必要がある．
+
 #### running throwing functions -> do, try, catch
 
 ```swift
@@ -388,8 +392,9 @@ do {
 } catch {
     print("Wrong password!")
 }
-
 ```
+
+エラーを返しうる処理をfuncにしなければならないのかな．
 
 ### inout parameters
 
@@ -402,3 +407,4 @@ doubleInPlace(number: &myNum)
 print(myNum)
 ```
 
+C++での参照渡しに似ている．
