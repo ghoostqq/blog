@@ -69,7 +69,7 @@ var name = (first: "Taylor", last: "Swift")
 tupleの使い方。あたいは変更できるが、型は変更できない。
 `name.0`または`name.first`のように、ポジションまたは名前でアクセスできる。
 
-### collections init and type annotation
+#### collections init and type annotation
 
 ```swift
 // Array
@@ -167,7 +167,7 @@ count += 1
 "abc" < "bbc"  // true
 ```
 
-#### conditions
+### conditions
 
 ```swift
 var sex = "man"
@@ -189,7 +189,7 @@ true && false
 true || false
 ```
 
-##### 三項演算子
+#### 三項演算子
 
 ```swift
 // the tenary operator
@@ -240,7 +240,9 @@ range operatorは`a..<b`：aからbまででbを含まない；`a...b`：bを含
 
 ## Day4
 
-### for loop
+### Loop
+
+#### for loop
 
 ```swift
 for i in 1...10 {
@@ -258,7 +260,7 @@ for _ in 1..<4 {
 
 参照が必要なければ`_`を指定することで，Swiftは評価をスキップしてくれる？
 
-### while loop
+#### while loop
 
 ```swift
 var number = 1
@@ -273,7 +275,7 @@ while number < 100 {
 print("Here I come!")
 ```
 
-### repeat loop
+#### repeat loop
 
 ```swift
 repeat {
@@ -282,7 +284,7 @@ repeat {
 } while number < 40
 ```
 
-### name loop to exit
+#### name loop to exit
 
 ```swift
 outerLoop: for i in 1...10 {
@@ -300,7 +302,7 @@ outerLoop: for i in 1...10 {
 }
 ```
 
-### continue
+#### continue
 
 ```swift
 for i in 1...10 {
@@ -328,7 +330,7 @@ func square(number: Int) -> Int {
 print(square(number: 8))
 ```
 
-### parameter labels
+#### parameter labels
 
 ```swift
 func sayHello(to name: String) {
@@ -339,7 +341,7 @@ sayHello(to: "Qiushi")
 
 パラメーターラベルは複数定義できる．可読性のためにここまでするのはたまげる．
 
-### omitting parameter labels; default parameters
+#### omitting parameter labels; default parameters
 
 ```swift
 func greet(_ name: String) {
@@ -354,7 +356,7 @@ greetTwo("Qiushi", "Peco")
 greetTwo("Qiushi")
 ```
 
-### variadic funcitons
+#### variadic funcitons
 
 ```swift
 func squareMany(numbers: Int...) {
@@ -364,6 +366,8 @@ func squareMany(numbers: Int...) {
 }
 squareMany(numbers: 1, 2, 3)
 ```
+
+可変長の引数を受けとる．
 
 ### throwing functions
 
@@ -408,3 +412,341 @@ print(myNum)
 ```
 
 C++での参照渡しに似ている．
+
+## Day6
+
+### closures
+
+```swift
+let drivin = {
+    print("I'm driving")
+}
+drivin()
+```
+
+#### closure with parameters
+
+```swift
+let drivin2 = { (place: String) in
+    print("I'm driving to \(place)")
+}
+drivin2("London")
+```
+
+closureは呼ぶときlabelをつけない（つけられない）．
+
+#### closure return values
+
+```swift
+let drivin3 = { (place: String) -> String in
+    return "I'm driving to \(place) in my car"
+}
+print(drivin3("London"))
+```
+
+### closure as parameters
+
+```swift
+func travel(by means: ()->Void) {
+    print("I'm traveling", terminator: " ")
+    means()
+}
+travel(by: {print("driving in my car")})
+```
+
+#### trailing closure syntax
+
+```swift
+travel() {
+    print("flying on the plane")
+}
+travel {
+    print("with my bike")
+}
+```
+
+最後の引数がclosureの場合，このように省略して呼べる．
+
+## Day7
+
+### parameter closure that takes parameter
+
+```swift
+func travel2(by means: (String) -> Void) {
+    print("I'm traveling", terminator: " ")
+    means("London")
+}
+travel2 { (place: String) in
+    print("to \(place) in my car")
+}
+```
+
+```swift
+func travel3(action: (String) -> String) {
+    print("I'm traveling", terminator: " ")
+    print(action("London"))
+}
+travel3 { (place: String) -> String in
+    return "to \(place) in my car."
+}
+```
+
+####  shorthand parameter names
+```swift
+travel3 { place in return "to \(place) in my car"}
+travel3 { return "to \($0) in my car" }
+```
+closureの引数が自明なら省略できる．`$0`によってポジション番号で呼ぶこともできる．
+
+```swift
+func travel4 (action: (String, Int) -> String) {
+    print("I'm traveling", terminator: " ")
+    print(action("London", 50))
+}
+travel4 {
+    return "to \($0) at \($1) kilo meters per hour"
+}
+
+func travel5 () -> (String)->Void {
+    return {
+        print("Traveling to \($0)")
+    }
+}
+let travelClosure = travel5()
+travelClosure("London")
+// travel5()("London") ;works but is not recommended.
+```
+
+### capturing values
+
+```swift
+func travel6() -> (String) -> Void {
+    var counter = 1
+    return {
+        print("\(counter). I'm going to \($0)")
+        counter += 1
+    }
+}
+let travelClosure2 = travel6()
+travelClosure2("London")
+travelClosure2("London")
+travelClosure2("London")
+travelClosure2("London")
+```
+
+この例ではcounterがcaptureされて，functionが呼ばれ終わった後も参照されている．ややこしい．
+
+## Day8
+
+### creating your own structs
+
+```swift
+struct Sport {
+    var name: String
+}
+
+var tennis = Sport(name: "Tennis")
+print(tennis.name)
+```
+
+#### computed properties
+
+```swift
+struct Sport2 {
+    var name: String // stored property
+    var isOlympicSport: Bool // stored property
+    
+    var olympicStatus: String {  // computed property
+        if isOlympicSport {
+            return "\(name) is an Olympic sport"
+        } else {
+            return "\(name) is not an Olympic sport"
+        }
+    }
+}
+
+let chessBoxing = Sport2(name: "Chessboxing", isOlympicSport: false)
+print(chessBoxing.olympicStatus)
+```
+
+closureなのか？　評価してreturnされるものを値として返すプロパティ．
+
+#### property observers
+
+```swift
+struct Progress {
+    var task: String
+    var amount: Int {
+        didSet {
+            print("\(task) is now \(amount)% complete")
+        }
+    }
+}
+var progress = Progress(task: "Loading data", amount: 0)
+progress.amount = 20
+progress.amount = 60
+progress.amount = 100
+```
+
+- didSet; evaluated after property changes.
+- willSet ; rarerly used. evaluated before property changes.
+
+### Methods
+
+```swift
+struct City {
+    var population: Int
+    
+    func collectTaxes() -> Int {
+        return population * 1000
+    }
+}
+
+let london = City(population: 9_000_000)
+london.collectTaxes()
+```
+
+structの中のfuncはmethodと呼ばれる．
+
+#### mutating methods
+
+```swift
+struct Person {
+    var name: String
+    
+    mutating func makeAnonymous() {
+        name = "Anonymous"
+    }
+}
+
+var person = Person(name: "Qiushi")
+person.makeAnonymous()
+```
+
+structの中で変数がvarとして定義されるかletとして定義されるかにかかわらず，structがletとして定義されれば中の変数も定数になる．
+
+structがvarとletどちらで初期化されるか分からないので，struct中の変数はデフォルトではmethodによって変更できないようになっている．
+
+変更するには，mutatingをつける必要がある．
+
+### String is a struct too.
+
+```swift
+let string  = "Do or do not, there is no try."
+print(string.count)
+print(string.hasPrefix("Do"))
+print(string.uppercased())
+print(string.sorted())
+```
+
+### Array is a struct too.
+
+```swift
+var toys = ["Woody"]
+print(toys.count)
+toys.append("Buzz")
+toys.firstIndex(of: "Buzz")
+print(toys.sorted())
+toys.remove(at: 0)
+```
+
+## Day9
+
+### initializers
+
+```swift
+struct User {
+    var username: String
+    
+    init() {
+        username = "Anonymous"
+        print("Creating a new user!")
+    }
+}
+
+var user = User()
+user.username = "Qiushi"
+```
+
+initにはfuncをつけない．
+
+initを定義する場合，すべてのstruct変数に値が付与される必要がある．
+
+#### self refer to the current instantce
+
+```swift
+struct Person {
+    var name: String
+    
+    init(name: String) {
+        print("\(name) was born!")
+        self.name = name
+    }
+}
+
+var person = Person(name: "Qiushi")
+```
+
+initの中でinitの引数とstructインスタンス変数名を区別するためにselfを用いる．
+
+### lazy properties
+
+```swift
+struct FamilyTree {
+    init() {
+        print("Creating family tree!")
+    }
+}
+struct Person2 {
+    var name: String
+    lazy var familyTree = FamilyTree()
+    
+    init (name: String) {
+        self.name = name
+    }
+}
+var qq = Person2(name: "Qiushi")
+qq.familyTree
+```
+
+lazyをつければ，参照されて初めて評価される．
+
+### static properties and methods
+
+```swift
+struct Student {
+    static var classSize = 0
+    var name: String
+    
+    init (name: String) {
+        self.name = name
+        Student.classSize += 1
+    }
+}
+
+let ed = Student(name: "Ed")
+let taylor = Student(name: "Taylor")
+print(Student.classSize)
+```
+
+staticをつけることで，struct変数になる．参照するにはインスタンスではな`struct名.変数名`で呼ぶ．
+
+### access control
+
+```swift
+struct Person3 {
+    private var id: String
+    
+    init(id: String) {
+        self.id = id
+    }
+    
+    func identify() -> String {
+        return "My social security number is \(id)"
+    }
+}
+```
+
+- private; 参照できる範囲をインスタンス内に制限する．
+- public
+
