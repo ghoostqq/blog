@@ -867,3 +867,250 @@ taylor.firstName = "John"
 print(taylor.name)
 ```
 
+## Day11
+
+### protocol
+
+protocolは変数やメソッドの概要を定義するもので，structがどんなprotocolかを指定して定義するのに使う．
+
+```swift
+protocol Identifiable {
+    var id: String { get set }
+}
+struct User: Identifiable {
+    var id: String
+}
+func displayID(thing: Identifiable) {
+    print("My ID is \(thing.id)")
+}
+var user = User(id: "abc")
+displayID(thing: user)
+```
+
+#### protocol inheritance
+
+```swift
+protocol Payable {
+    func calculateWages() -> Int
+}
+protocol NeedsTraining {
+    func study()
+}
+protocol HasVacation {
+    func takeVacation(days: Int)
+}
+protocol Employee: Payable, NeedsTraining, HasVacation {}
+```
+
+### extensions
+
+```swift
+extension Int {
+    func squared() -> Int {
+        return self * self
+    }
+    var isEven: Bool {
+        return self % 2 == 0
+    }
+}
+let number = 8
+number.squared()
+number.isEven
+```
+
+既存のtypeにmethodを追加できる．
+
+stored propertyを追加することはできないが，computed propertyはできる．
+
+### protocol extensions
+
+```swift
+let pythons = ["Eric", "Graham", "John", "Michael", "Terry", "Terry"]
+let beatles = Set(["John", "Paul", "George", "Ringo"])
+
+extension Collection {
+    func summarize() {
+        print("There are \(count) of us:")
+        for name in self {
+            print(name)
+        }
+    }
+}
+pythons.summarize()
+beatles.summarize(
+```
+
+protocolのextensionを作ることで，それを継承する型で追加機能が使えるようになる．
+
+（protocolは機能の中身までは定義しないのに，変な感覚だ．）
+
+### protocol-oriented programming
+
+```swift
+protocol Identifiable {
+    var id: String {set get}
+    func identify ()
+}
+
+extension Identifiable {
+    func identify() -> Void {
+        print("My ID is \(id).")
+    }
+}
+
+struct User : Identifiable {
+    var id: String
+}
+
+let twostraws = User(id: "twostraws")
+twostraws.identify()
+```
+
+protocolのメソッドに対して継承するstructで一つ一つ内容を定義することもできるが，protocol-oriented programmingではデフォルトをextensionで定義することを推奨（？）している．
+
+## Day12
+
+### optionals
+
+```swift
+var age : Int? = nil
+age = 12
+```
+
+#### unwrapping optionals
+
+```swift
+var name: String? = nil
+if let unwrapped = name {
+    print("\(unwrapped.count)")
+} else {
+    print("Missing name.")
+}
+```
+
+#### unwrapping with guard
+
+```swift
+func greet(_ name: String?) {
+    guard let unwrapped = name else {
+        print("You didn't provide a name!")
+        return
+    }
+    print("Hello, \(unwrapped)!")
+}
+greet(nil)
+greet("Qiushi")
+```
+
+#### force unwrapping
+
+```swift
+let str = "5"
+let num = Int(str)
+let num2 = Int(str)!
+```
+
+StringをInt()で整数型に変換する時，Int?型になる．必ず整数だと分かっている場合，Int()!とすることで強制的にInt型に変換できる．
+
+#### implicitly unwrapped options
+
+```swift
+var num3: Int! = nil
+num3 = 1
+```
+
+最初にnilをとるが必ず値が割り振られると分かっている時，implicitly unwrapped optionsを用いることでif letやguard letを書かずに済む．
+
+だが，標準的なoptionalsを使う方が安全だろう．
+
+### nil coalescing
+
+```swift
+func username(for id: Int) -> String? {
+    if id == 1 {
+        return "Taylor"
+    } else {
+        return nil
+    }
+}
+let user = username(for: 2) ?? "Anonymous"
+```
+
+### optional chaining ??????
+
+```swift
+let names = ["John", "Paul", "George", "Ringo"]
+let beatle = names.first?.uppercased()
+let nilArray = Array<String>()
+nilArray.first
+let nobody = nilArray.first?.uppercased()
+let nilTooArr: [String?] = ["A", nil]
+nilTooArr.first
+nilTooArr.last
+nilTooArr.last??.uppercased()
+// ????
+```
+
+#### optional try
+
+```swift
+enum PasswordError: Error {
+    case obvious
+}
+func checkPass (_ password: String) throws -> Bool {
+    if password == "password" {
+        throw PasswordError.obvious
+    }
+    return true
+}
+
+if let result = try? checkPass("password") {
+    print("Result is \(result)")
+} else {
+    print("D'oh.")
+}
+
+try! checkPass("Sekrit")
+print("OK")
+```
+
+### failable initializers
+
+```swift
+let string = "8"
+let number = Int(string)  // failable initializer
+
+struct User {
+    var name: String
+    
+    init? (name: String) {
+        if name.count > 3 {
+            self.name = name
+        } else {
+            return nil
+        }
+    }
+}
+let userA = User(name: "Qi")
+```
+
+#### typecasting
+
+`as?`を用いたif let構文により，もしそのクラスであればそのまま代入され，そうでなければnilとなりifに通らない．
+
+```swift
+class Animal {}
+class Fish: Animal {}
+class Dog: Animal {
+    func makeNoise() {
+        print("Woof")
+    }
+}
+let pets = [Fish(), Dog(), Fish(), Dog()]
+for pet in pets {
+    if let dog = pet as? Dog {
+        dog.makeNoise()
+    }
+}
+```
+
