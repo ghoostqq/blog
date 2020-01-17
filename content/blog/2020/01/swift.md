@@ -750,3 +750,120 @@ struct Person3 {
 - private; 参照できる範囲をインスタンス内に制限する．
 - public
 
+## Day10
+
+### class
+
+classはstructと違い，memberwise initializerがデフォルトで付いてこないため，必ずinitを定義する必要がある．
+
+```swift
+class Dog {
+    var name: String
+    var breed: String
+    
+    init(name: String, breed: String) {
+        self.name = name
+        self.breed = breed
+    }
+}
+let poppy = Dog(name: "Poppy", breed: "Poodle")
+```
+
+#### class inheritance
+
+```swift
+class Poodle: Dog {
+    init(name: String) {
+        super.init(name: name, breed: "Poodle")
+    }
+}
+```
+
+super.init()は必須．
+
+引数が同じだとinitはoverrideをつける必要があるよう．
+
+#### override methods
+
+```swift
+class Dog2 {
+    func makeNoise() {
+        print("Woof!")
+    }
+}
+class Poodle2: Dog2 {
+    override func makeNoise() {
+        print("Yip!")
+    }
+}
+let poppy2 = Poodle2()
+poppy2.makeNoise()
+```
+
+#### final class
+
+```swift
+final class Dog3 {
+}
+//class Poodle3: Dog3 {
+//} // fails
+```
+
+#### copying objects
+
+`=`でコピーする時，classは同じポインタとなり，structは違うポインタとなるため（？），コピー先の変更がオリジナルにclassでは反映され，structでは反映されない．（structとclassの違いその3）
+
+```swift
+class SingerClass {
+    var name = "Taylor Swift"
+}
+var singer = SingerClass()
+print(singer.name)
+var singerCopy = singer
+singerCopy.name = "Justin Bieber"
+print(singer.name)
+
+struct SingerStruct {
+    var name = "Taylor Swift"
+}
+var singer2 = SingerStruct()
+print(singer2.name)
+var singerCopy2 = singer2
+singerCopy2.name = "Justin Bieber"
+print(singer2.name)
+```
+
+#### deinitializers
+
+classにはdeinitializerがある．（structとclassの違いその4）
+
+```swift
+class PersonBorn {
+    var name = "John Doe"
+    init () {
+        print("\(name) is born!")
+    }
+    deinit {
+        print("\(name) is no more!")
+    }
+}
+for _ in 1...3 {
+    var person = PersonBorn()
+}
+```
+
+#### mutability
+
+constantのclass instanceでも変数がvariableなら変更可能．（structとclassの違いその5）
+
+```swift
+class Singer4 {
+    var firstName = "Taylor"
+    let lastName = "Swift"
+}
+let taylor = Singer4()
+taylor.firstName = "John"
+//taylor.lastName = "Doe" // fails
+print(taylor.name)
+```
+
