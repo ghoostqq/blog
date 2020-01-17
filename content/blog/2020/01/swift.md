@@ -1114,3 +1114,117 @@ for pet in pets {
 }
 ```
 
+## Day13-15
+
+```swift
+let tuple = (1,2)
+type(of: tuple)  // -> (Int, Int).Type
+```
+
+tupleは型ではない．
+
+```swift
+nil ?? 1  // -> 1
+```
+
+`??`はnilのデフォルトのために使うという認識で良さそう．
+
+```swift
+var str : String? = "abc"
+type(of: str)  // -> Optional<String>.Type
+
+if let string = str {
+    type(of: string)
+    print("str is \(str)")
+    print("string is \(string)")
+}
+
+var nilll: String? = nil
+if let string = nilll {
+    type(of: string)
+} else {
+    // stringはこの場合そもそも参照できない
+    type(of: nilll)
+}
+
+```
+
+```swift
+enum Weather {
+    case sun
+    case cloud
+    case rain
+}
+func headache (weather: Weather) -> String? {
+    switch weather {
+    case .sun:
+        return "like"
+    case .rain:
+        return "hate"
+    case .cloud:
+        return nil
+    }
+}
+```
+
+enumのswitch文はdefaultがなくても場合が全部列挙できていれば良い．
+
+```swift
+class C {
+    @objc func blabla() {
+    }
+}
+@objcMembers class Cs {
+    func blabla() {
+    }
+}
+```
+
+Objective-Cのコードを動くようにするもの．既存コードを使う場合必要な場面がありそう．
+
+```swift
+struct Person {
+    private var age: Int
+    fileprivate var name: String
+    
+    var ageInDogYears: Int {
+        get {  // can be abbregated.
+            return age * 7
+        }
+    }
+}
+struct User {
+    let person: Person
+    var username: String {
+        return person.name
+    }
+}
+```
+
+fileprivateは同じファイルの中でprivateに利用するというもの．パッケージとして公開するばあいなどに使うか．
+
+```swift
+class Album {
+}
+class StudioAlbum: Album {
+    var studio: String
+    init(studio: String) {
+        self.studio = studio
+    }
+}
+class LiveAlbum: Album {
+    var location: String
+    init(location: String) {
+        self.location = location
+    }
+}
+var taylorSwift = StudioAlbum(studio: "The Castles Studios")
+var fearless = StudioAlbum(studio: "Aimeeland Studio")
+var iTunesLive = LiveAlbum(location: "New York")
+var allAlbums: [Album] = [taylorSwift, fearless, iTunesLive]
+for album in allAlbums as? [LiveAlbum] ?? [LiveAlbum]() {
+    print(album.location)
+}
+```
+
+array全体に対して`as?`を使うことができる．その場合，変換が失敗してnilになった場合にもループを走らせるために空のarrayが必要．上のコードはStudioAlbumをLiveAlbumに変換できないためnilとなり結果何もしない．
