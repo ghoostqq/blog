@@ -1,5 +1,5 @@
 ---
-title: "Swift Cheat sheet (1-12/100)"
+title: "Swift Cheat sheet (1-15/100)"
 date: 2020-01-14T23:18:11+09:00
 draft: false
 categories:
@@ -9,7 +9,7 @@ tags:
 keywords:
 ---
 
-[100DaysOfSwiftUI](https://www.hackingwithswift.com/100/swiftui)の振り返り用Cheat sheetです．Day1-Day12のまとめです．
+[100DaysOfSwiftUI](https://www.hackingwithswift.com/100/swiftui)の振り返り用Cheat sheetです．Day1-Day15のまとめです．
 
 ## Day1
 
