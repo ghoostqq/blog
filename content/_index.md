@@ -10,20 +10,14 @@ weight: 1
 Name: Qiushi Pan / 潘 秋実  
 
 ### Interest
-Machine Learning, Consciousness, Web
+Machine Learning, Consciousness, App Development
 
 ### Hobby
-Anime, Manga, Movie
+I enjoy Anime, Manga, Movies, and Games
 
 ### Links
 
-- GitHub: [https://github.com/qqhann](https://github.com/qqhann)
-
-- Twitter: [https://twitter.com/qqhann](https://twitter.com/qqhann)
-
-- Kaggle: [https://www.kaggle.com/qiugits](https://www.kaggle.com/qiugits)
-
-- AtCoder: https://atcoder.jp/users/qiu
+[GitHub](https://github.com/qqhann) / [Twitter](https://twitter.com/qqhann) / [Twitter(ENG)](https://twitter.com/QiushiPan) / [Kaggle](https://www.kaggle.com/qqhann) / [AtCoder](https://atcoder.jp/users/qiu)
 
 
 
