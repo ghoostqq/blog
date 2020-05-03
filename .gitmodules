@@ -1,9 +1,9 @@
 [submodule "themes/bootswatch"]
 	path = themes/bootswatch
-	url = https://github.com/nilproductions/hugo-bootswatch.git
+	url = git@github.com:nilproductions/hugo-bootswatch.git
 [submodule "themes/hugo-primer"]
 	path = themes/hugo-primer
-	url = https://github.com/qqhann/hugo-primer.git
+	url = git@github.com:qqhann/hugo-primer.git
 [submodule "public"]
 	path = public
-	url = https://github.com/qqhann/qqhann.github.io.git
+	url = git@github.com:qqhann/qqhann.github.io.git
