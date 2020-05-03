@@ -1,6 +1,3 @@
-[submodule "themes/bootswatch"]
-	path = themes/bootswatch
-	url = git@github.com:nilproductions/hugo-bootswatch.git
 [submodule "themes/hugo-primer"]
 	path = themes/hugo-primer
 	url = git@github.com:qqhann/hugo-primer.git
