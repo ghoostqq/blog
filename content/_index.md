@@ -21,14 +21,19 @@ I enjoy Anime, Manga, Movies, and Games
 
 
 
-
 ## Major Projects
+
+### [Comment Screen (2019)](https://commentscreen.com/)
+
+画面上にコメントやツイートの文章を重ねてストリーミングできるアプリ。発表をインタラクティブなものにすることができる。
+electronによるWindowsアプリとReactによるWebアプリを担当
+
 ### [Tsukuba Athletics Department Website (2019)](https://athletics.tsukuba.ac.jp/)
 
-> 筑波大学アスレチックデパートメントの広報用Webサイト。筑波大学の学生により制作。記事も学生の手により更新され、部活動を大学スポーツへと昇華させる情報発信を担う
+筑波大学アスレチックデパートメントの広報用Webサイト。筑波大学の学生により制作。記事も学生の手により更新され、部活動を大学スポーツへと昇華させる情報発信を担う
 
-### [VainLab (2017)](https://gitshell.net/vainlab)
+### [VainLab (2017)](https://github.com/qqhann/vainlab.gitshell.net)
 
-> Enable Vainglory players to browse their game history online. Further updates are being planned. I built this web site from the server to its front end.
+Enable Vainglory players to browse their game history online. Further updates are being planned. I built this web site from the server to its front end.
 
 **Find my other projects in [Projects tab]({{< ref "projects.md" >}})**
