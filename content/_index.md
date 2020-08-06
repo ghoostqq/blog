@@ -19,7 +19,7 @@ I enjoy Anime, Manga, Movies, and Games
 
 [GitHub](https://github.com/qqhann) / [Twitter](https://twitter.com/qqhann) / [Twitter(ENG)](https://twitter.com/QiushiPan) / [Kaggle](https://www.kaggle.com/qqhann) / [AtCoder](https://atcoder.jp/users/qiu)
 
-
+[Amazon Wish List](https://www.amazon.jp/hz/wishlist/ls/26JMWTGJ0OHM2?ref_=wl_share)
 
 ## Major Projects
 
